@@ -1,0 +1,170 @@
+﻿@inject IConfiguration Configuration
+@{
+    ViewData["Title"] = "System Status";
+    var status = ViewBag.I;
+}
+
+<style>
+    .available {
+        height: 25px;
+        width: 25px;
+        background-color: green;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    .unavailable {
+        height: 25px;
+        width: 25px;
+        background-color: red;
+        border-radius: 50%;
+        display: inline-block;
+    }
+    
+    .under-maintance {
+        height: 25px;
+        width: 25px;
+        background-color: orange;
+        border-radius: 50%;
+        display: inline-block;
+    }
+    .explicatie{
+        display: inline-block;
+        text-align: right;
+    }
+</style>
+<div class="text-center">
+    <br />
+    <img style="width:300px;height:200px" src="https://www.ubbcluj.ro/img/Logo-UBB.svg" alt="Logo UBB"/>
+    <h1 class="display-4">Universitatea Babeș-Bolyai - System Status</h1>
+    <br />
+    <div class="explicatie">
+        <p><span class="available"></span>Disponibil<span class="under-maintance"></span>Mentenanta<span class="unavailable"></span>Indisponibil</p>
+    </div>
+    <table class="table table-bordered border-primary">
+        <thead>
+            <tr>
+                <th scope="col">Status</th>
+                <th scope="col">Nume</th>
+                <th scope="col">Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row"><span class="@ViewBag.UBB"></span></th>
+                <td>Universitatea Babes-Bolyai</td>
+                <td><a href="@Configuration.GetSection("UBB")["UBB"].ToString()" target="_blank">Link</a></td>
+            </tr>
+            <tr>
+                <th scope="row"><span class="@ViewBag.ACADEMICINFO"></span></th>
+                <td>Platforma admitere</td>
+                <td><a href="@Configuration.GetSection("UBB")["AcademicInfo"].ToString()" target="_blank">Link</a></td>
+            </tr>
+            <tr>
+                <th scope="row"><span class="@ViewBag.PLATFORMAADMITERE"></span></th>
+                <td>Academic info</td>
+                <td><a href="@Configuration.GetSection("UBB")["PlatformaAdmitere"].ToString()" target="_blank">Link</a></td>
+            </tr>
+            <tr>
+                <th scope="row"><span class="@ViewBag.CS"></span></th>
+                <td>Facultatea de Matematică și Informatică</td>
+                <td><a href="@Configuration.GetSection("UBB")["Cs"].ToString()" target="_blank">Link</a></td>
+            </tr>
+            <tr>
+                <th scope="row"><span class="@ViewBag.PHYS"></span></th>
+                <td>Facultatea de Fizică</td>
+                <td><a href="@Configuration.GetSection("UBB")["Phys"].ToString()" target="_blank">Link</a></td>
+            </tr>
+            <tr>
+                <th scope="row"><span class="@ViewBag.CHEM"></span></th>
+                <td>Facultatea de Chimie și Inginerie Chimică</td>
+                <td><a href="@Configuration.GetSection("UBB")["Chem"].ToString()" target="_blank">Link</a></td>
+            </tr>
+            <tr>
+                <th scope="row"><span class="@ViewBag.BIOGEO"></span></th>
+                <td>Facultatea de Biologie și Geologie</td>
+                <td><a href="@Configuration.GetSection("UBB")["Biogeo"].ToString()" target="_blank">Link</a></td>
+            </tr>
+            <tr>
+                <th scope="row"><span class="@ViewBag.GEOGRAFIE"></span></th>
+                <td>Facultatea de Geografie</td>
+                <td><a href="@Configuration.GetSection("UBB")["Geografie"].ToString()" target="_blank">Link</a></td>
+            </tr>
+            <tr>
+                <th scope="row"><span class="@ViewBag.LAW"></span></th>
+                <td>Facultatea de Drept</td>
+                <td><a href="@Configuration.GetSection("UBB")["Law"].ToString()" target="_blank">Link</a></td>
+            </tr>
+            <tr>
+                <th scope="row"><span class="@ViewBag.LITERE"></span></th>
+                <td>Facultatea de Litere</td>
+                <td><a href="@Configuration.GetSection("UBB")["Litere"].ToString()" target="_blank">Link</a></td>
+            </tr>
+            <tr>
+                <th scope="row"><span class="@ViewBag.SOCASIS"></span></th>
+                <td>Facultatea de Sociologie și Asistență Socială</td>
+                <td><a href="@Configuration.GetSection("UBB")["Socasis"].ToString()" target="_blank">Link</a></td>
+            </tr>
+            <tr>
+                <th scope="row"><span class="@ViewBag.PSIEDU"></span></th>
+                <td>Facultatea de Psihologie și Științe ale Educației</td>
+                <td><a href="@Configuration.GetSection("UBB")["Psiedu"].ToString()" target="_blank">Link</a></td>
+            </tr>
+            <tr>
+                <th scope="row"><span class="@ViewBag.ECON"></span></th>
+                <td>Facultatea de Științe Economice și Gestiunea Afacerilor</td>
+                <td><a href="@Configuration.GetSection("UBB")["Econ"].ToString()" target="_blank">Link</a></td>
+            </tr>
+            <tr>
+                <th scope="row"><span class="@ViewBag.EURO"></span></th>
+                <td>Facultatea de Studii Europene</td>
+                <td><a href="@Configuration.GetSection("UBB")["Euro"].ToString()" target="_blank">Link</a></td>
+            </tr>
+            <tr>
+                <th scope="row"><span class="@ViewBag.TBS"></span></th>
+                <td>Facultatea de Business</td>
+                <td><a href="@Configuration.GetSection("UBB")["Tbs"].ToString()" target="_blank">Link</a></td>
+            </tr>
+            <tr>
+                <th scope="row"><span class="@ViewBag.FSPAC"></span></th>
+                <td>Facultatea de Științe Politice, Administrative și ale Comunicării</td>
+                <td><a href="@Configuration.GetSection("UBB")["FSPAC"].ToString()" target="_blank">Link</a></td>
+            </tr>
+            <tr>
+                <th scope="row"><span class="@ViewBag.SPORT"></span></th>
+                <td>Facultatea de Educație Fizică și Sport</td>
+                <td><a href="@Configuration.GetSection("UBB")["Sport"].ToString()" target="_blank">Link</a></td>
+            </tr>
+            <tr>
+                <th scope="row"><span class="@ViewBag.OT"></span></th>
+                <td>Facultatea de Teologie Ortodoxă</td>
+                <td><a href="@Configuration.GetSection("UBB")["Ot"].ToString()" target="_blank">Link</a></td>
+            </tr>
+            <tr>
+                <th scope="row"><span class="@ViewBag.GCT"></span></th>
+                <td>Facultatea de Teologie Greco-Catolică</td>
+                <td><a href="@Configuration.GetSection("UBB")["Gct"].ToString()" target="_blank">Link</a></td>
+            </tr>
+            <tr>
+                <th scope="row"><span class="@ViewBag.RT"></span></th>
+                <td>Facultatea de Teologie Reformată și Muzică</td>
+                <td><a href="@Configuration.GetSection("UBB")["Rt"].ToString()" target="_blank">Link</a></td>
+            </tr>
+            <tr>
+                <th scope="row"><span class="@ViewBag.ROCATEO"></span></th>
+                <td>Facultatea de Teologie Romano-Catolică</td>
+                <td><a href="@Configuration.GetSection("UBB")["Rocateo"].ToString()" target="_blank">Link</a></td>
+            </tr>
+            <tr>
+                <th scope="row"><span class="@ViewBag.TEATRUFILM"></span></th>
+                <td>Facultatea de Teatru și Film</td>
+                <td><a href="@Configuration.GetSection("UBB")["TeatruFilm"].ToString()" target="_blank">Link</a></td>
+            </tr>
+            <tr>
+                <th scope="row"><span class="@ViewBag.ENG"></span></th>
+                <td>Facultatea de Inginerie – Reșița</td>
+                <td><a href="@Configuration.GetSection("UBB")["Eng"].ToString()" target="_blank">Link</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
